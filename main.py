@@ -112,6 +112,40 @@ class Requisition:
 
 
 
+
+
+
+def display_statistics(requisitions):
+      total = len(requisitions)
+
+      approved = 0
+      pending = 0
+      not_approved = 0
+
+
+      for req in requisitions:
+            if req.status == "Approved":
+                  approved +=1
+
+            elif req.status == "Pending":
+                  pending +=1
+
+
+                
+
+            elif req.status == "Not Approved":
+                  not_approved +=1
+                  
+
+      print("\nRequisition Statistics")
+      print("Total Requistations:", total)
+      print("Approved:", approved)
+      print("Pending:", pending)
+      print("Not Approved:", not_approved)
+
+
+
+
 req = Requisition()
 req.add_requisition()
 req.approve_requisition()
@@ -121,10 +155,24 @@ req.respond_requisition()
 
 
 
+      
+               
+
+
+
+         
+
+
+
+
+requisitions = [req]
+display_statistics(requisitions)
 
 
 print("Status:", req.status)
 print("Approval Reference:" , req.approval_ref)
+
+
 
 
 
