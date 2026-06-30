@@ -55,7 +55,20 @@ class Requisition:
                     else:
                         self.status = "Pending"
                         self.approval_ref = "Not available"
+    
 
+
+    def display_requisition(self):
+          print("\n Requisition Details")
+          print("Date:", self.date)
+          print("Staff Id:", self.date)
+          print("Staff Name:", self.staff_name)
+          print("Requisition ID:", self.requisition_id)
+          print("Total: $", self.total)
+          print("Status:", self.status)
+          print("Approval Reference:", self.approval_ref)
+
+          
 
 
 
@@ -65,10 +78,15 @@ class Requisition:
 req = Requisition()
 req.add_requisition()
 req.approve_requisition()
+req.display_requisition()
+
 
 
 print("Status:", req.status)
-print("Approval Reference:" , req.approval_ref) 
+print("Approval Reference:" , req.approval_ref)
+
+
+
 
 
 
